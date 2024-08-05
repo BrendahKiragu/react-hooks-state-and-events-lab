@@ -7,15 +7,11 @@ function App() {
 
   const appClass = isDarkMode ? "App dark" : "App light"
 
-  const toggleDarkMode = ()=>{
-    setisDarkMode(prevMode => !prevMode)
-  };
-
   return (
     <div className={appClass}>
       <header>
         <h2>Shopster</h2>
-        <button onClick={toggleDarkMode}>{isDarkMode ? "Light Mode":"Dark Mode"}</button>
+        <button onClick = {()=>setisDarkMode(!isDarkMode )}>{isDarkMode? "Light Mode":"Dark Mode"}</button>
       </header>
       <ShoppingList items={itemData} />
     </div>
