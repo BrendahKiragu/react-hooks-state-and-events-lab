@@ -4,13 +4,14 @@ import Item from "./Item";
 function ShoppingList({ items }) {
 
   const [selectedCategory, setSelectedCategory] = useState("All")
+  
   function handleCategoryChange(e){
     setSelectedCategory(e.target.value)
   }
 
 //creates a new array with only the items in the selected category
  const filteredItems = items.filter ((item) => 
-  selectedCategory ==="All" ||item.category === selectedCategory
+  selectedCategory ==="All"? true : item.category === selectedCategory
  )
 
   return (
